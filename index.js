@@ -7,7 +7,7 @@ const NAME = require('./package.json').name;
 exports.decorateConfig = config => config;
 
 let activeStyle = { transition: 'opacity 200ms ease-in' };
-let inactiveStyle = { color: '#fff', opacity: 0.3 };
+let inactiveStyle = { opacity: 0.3 };
 let mapIcons = {};
 let mapColors = {};
 let disableColors = false;
@@ -44,8 +44,9 @@ const loadIcons = () => {
 
 const getIcon = title => {
   loadIcons();
-  const results = filter(classes, title.split(' ')[0], { maxResults: 1 });
-  const match = results.length === 0 ? 'shell' : results[0];
+  if(title.split(' ').length === 1) return { class: icons.zsh, name: 'zsh' };
+  const results = filter(classes, title.split(' ')[1], { maxResults: 1 });
+  const match = results.length === 0 ? 'zsh' : results[0];
   return { class: icons[match], name: match };
 };
 

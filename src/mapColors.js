@@ -7,6 +7,6 @@ module.exports = {
   node: '#7EBF00',
   ruby: '#CC342D',
   shell: '#FFF',
-  zsh: '#C5DB00',
+  zsh: '#D24B4B',
   python: '#FFDF59',
 };

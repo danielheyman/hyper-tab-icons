@@ -28,6 +28,7 @@ module.exports = {
   ],
   nodejs: [
     'node',
+    'nodemon'
   ],
   ruby: [
     'irb',
